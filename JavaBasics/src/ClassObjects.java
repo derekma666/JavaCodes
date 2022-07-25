@@ -1,4 +1,4 @@
-public class Class_Objs {
+public class ClassObjects {
 
     //Classes and objects
     public static void main(String[] args) {

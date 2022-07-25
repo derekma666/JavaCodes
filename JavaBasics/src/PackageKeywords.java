@@ -1,5 +1,4 @@
 import java.time.LocalDate;
-
 import java.time.LocalDateTime;
 import java.util.Date;
 
@@ -16,7 +15,7 @@ public class PackageKeywords {
         // Arithmetic Operations
         System.out.println(10 + 2 + 2 + 90);
         System.out.println(10 - 2);
-        // Bodmas body orders division multiplication addition substraction
+        // Bodmas body orders division multiplication addition subtraction
         System.out.println(10 * (2 + 7) - 4.5);
         System.out.println(10 % 3);
 
