@@ -29,8 +29,7 @@ public class PackageKeywords {
         System.out.println(Math.PI);
 
         // Comparison Operators
-        int khalidAge = 18;
-        int mariamAge = 20;
+        int khalidAge = 18;        int mariamAge = 20;
         boolean isKahlidOlderThanMariam = khalidAge > mariamAge;
         System.out.println(isKahlidOlderThanMariam);
         System.out.println(khalidAge < mariamAge);

@@ -1,7 +1,7 @@
 
 import java.util.Arrays;
 
-public class arrays_part {
+public class ArraysPart {
 
     public static void main(String[] args) {
         //Arrays: one variable holds more than one value
