@@ -2,7 +2,6 @@ public class Stack {
 
     // First in Last out (FILO)
 }
-
 class ArrayStack {
     private int maxSize; //size of stack
     private int[] stack; //arrays, for simulate the stack, data in arrays
@@ -26,6 +25,6 @@ class ArrayStack {
     }
 
     // push
-    public
+
 
 }
