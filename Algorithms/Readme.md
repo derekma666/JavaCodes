@@ -22,6 +22,10 @@
 * Priority Queues, Huffman trees
 * Graphs and graph representations
 
+
+
+
+
 **Algorithm basics**
 - pseudo-code conventions
 - analysing algorithms using RAM
@@ -33,12 +37,12 @@
 - ALL sorting algorithms covered in this module.
 
 **Stack**:
- - LIFO
- - S.top
- - basic operations (O(1))
-- PUSH(S, x)
-- POP(S)
-- STACK-EMPTY(S)
+ - LIFO: Last In First Out
+ - $S.top$
+ - basic operations $O(1)$
+   - PUSH $(S, x)$
+   - POP $(S)$
+   - STACK-EMPTY$(S)$
 
 ```java
 // STACK-EMPTY(S)
@@ -62,7 +66,17 @@ else S.top = S.top - 1
     return S[S.top + 1]
 ```
 
-**Queue**:
-Q.head is the first element of queue.
-Q.tail is the next insersion position of the last element. 
+**Queues**:
+- FIFO: 
+      First In First Out
+- tail & Q.head
+  
+  Q.head is the first element of queue.
+
+  Q.tail is the next insersion position of the last element. 
+- 2 basic operations $O(1)$
+  - ENQUEUE $(Q, x)$
+  - DEQUEUE $(Q)$
+
+
 
