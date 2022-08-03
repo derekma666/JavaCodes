@@ -1,5 +1,10 @@
 import java.util.Scanner;
+/*
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!          Stack              !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+ */
 public class Stack {
     // First in Last out (FILO)
     public static void main(String[] args) {
@@ -56,9 +61,9 @@ public class Stack {
 
 // define a class to represent stack
 class ArrayStack {
-    private int maxSize; //size of stack
-    private int[] stack; //arrays, for simulate the stack, data in the array
-    private int top = -1; // top, initialisation: -1, no data
+    private int maxSize; //1. size of stack
+    private int[] stack; //2. arrays, data in the array
+    private int top = -1; //3. top, initialisation: -1, no data status
 
     // constructor/methods
     public ArrayStack(int maxSize) {
@@ -68,11 +73,13 @@ class ArrayStack {
 
     // full stack
     public boolean isFull() {
+
         return top == maxSize -1 ;
     }
 
     // empty stack
     public boolean isEmpty() {
+
         return top == -1;
     }
 
@@ -92,7 +99,7 @@ class ArrayStack {
     public int pop() {
         // step 1: check the stack is empty or not?
         if(isEmpty()){
-            //give
+            //throw a message
             throw new RuntimeException("** Empty, no data **");
         }
         int value = stack[top];
@@ -100,7 +107,7 @@ class ArrayStack {
         return value;
     }
 
-    //traverse, need start from the stack top
+    //traverse, needs to start from the stack top
     public void list(){
         // step 1: check the stack is empty or not?
         if (isEmpty()){
