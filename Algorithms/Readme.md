@@ -153,20 +153,23 @@ Most often we describe the behaviour of an algorithm by stating its **worst-case
 
 ### Time Complexity
 
-Big-oh $O$, big-theta $\theta$, and big omega $\Omega$ are called **Asymptotic Notations**. 
+**Asymptotic Notations**:
+- Big-oh $O$
+  
+  An algorithm’s running time is $O(n^2)$, it is an **asymptotic upper bound** which means it could be some constant times $n^2$, $n$ or some constant, but not some constant times $n^3$
+- Big-theta $Θ$
 
-- An algorithm’s running time is $O(n2)$, it is an **asymptotic upper bound** which means it could be some constant times $n^2$, $n$ or some constant, but not some constant times $n^3$
-
-- An algorithm’s running time is $Θ(n2)$, means it could only be some constant times $n^2$ but not anything else. 
-
-- An algorithm’s running time is $Ω(n2)$, it is an **asymptotic lower bound** which means it could be some constant times $n^2$, $n^3$ or $n^4$ , but not some constant times $n$.
+  An algorithm’s running time is $Θ(n^2)$, means it could only be some constant times $n^2$ but not anything else.
+- Big omega $\Omega$ are called . 
+  
+  An algorithm’s running time is $Ω(n^2)$, it is an **asymptotic lower bound** which means it could be some constant times $n^2$, $n^3$ or $n^4$ , but not some constant times $n$.
 
 <div align = center><img src='https://media.geeksforgeeks.org/wp-content/cdn-uploads/mypic.png'></div>
 
 
 Times of repetitions of each statement $T(n)$
 High efficiency to low efficienty:
-1. constant $O(1)$
+1. constant $O(1)$: **Best**
 2. logarithmic $O(lgn)$ 
 
 ```java
@@ -210,10 +213,27 @@ e.g., $T(n)=3n^2+2n+2=O(n^2)$
 
 
 
+---
+
+**Data structure is the way to store and organise data in order to facilitate access and modification. Algorithms need to manipulate different data structures, and they go hand in hand. We have studied some data structures e.g. primitive data, object and arrays.**
+
+Mathematical sets are static while sets in Computer Science are dynamic. Elements in a set is represented by an object (say $x$) and an object contains a key field (say $k$) and some satellite data. General operations on a dynamic set $S$ include
+
+- SEARCH (S, k)
+- INSERT (S, x)
+- DELETE (S, x)
+- MINIMUM (S)
+- MAXIMUM (S)
+- SUCCESSOR (S, x): returns the next larger object with respect to the key value.
+- PREDECESSOR (S, x): returns the next smaller object with respect to the key value
 
 
 
 ## Stack
+
+
+
+
 **Stack**:
  - LIFO: Last In First Out
  - $S.top$
@@ -257,4 +277,5 @@ else S.top = S.top - 1
   - DEQUEUE $(Q)$
 
 
+## Direct-address tables
 
