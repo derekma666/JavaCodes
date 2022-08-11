@@ -276,6 +276,7 @@ else S.top = S.top - 1
   - ENQUEUE $(Q, x)$
   - DEQUEUE $(Q)$
 
+## Hash tables
 
 ## Direct-address tables
 
