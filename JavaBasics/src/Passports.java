@@ -13,6 +13,8 @@ public class Passports {
                 "USA",
                 LocalDate.of(2030,1,1)
         );
+        System.out.println(ukPassport);
+        System.out.println(usPassport);
 
     }
 
@@ -28,6 +30,15 @@ public class Passports {
             this.number = number;
             this.country = country;
             this.expiryDate = expiryDate;
+        }
+
+        @Override
+        public String toString() {
+            return "Passport{" +
+                    "number='" + number + '\'' +
+                    ", country='" + country + '\'' +
+                    ", expiryDate=" + expiryDate +
+                    '}';
         }
     }
 }
