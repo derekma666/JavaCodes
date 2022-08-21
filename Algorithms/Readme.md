@@ -1,10 +1,13 @@
-# Algorithms in Java Programming
+# Data Structures and Algorithms in Java Programming
+
+Programming = Data Structure + Algorithm
+
 
 ## Contents
 ### Part 1: Pseudo-code, algorithm analysis and linear data structures
-* [Pseudo-code]()
-* Stack
-* Queues
+* [Pseudo-code](#pseudocode-and-algorithm-analysis)
+* [Stack Data Structure](#stack)
+* [Queues Data Structure](#queue-data-structure)
 * Linked list
 
 ### Part 2: Sorting algorithms
@@ -214,8 +217,19 @@ e.g., $T(n)=3n^2+2n+2=O(n^2)$
 
 
 ---
+## Data Structure: 
 
 **Data structure is the way to store and organise data in order to facilitate access and modification. Algorithms need to manipulate different data structures, and they go hand in hand. We have studied some data structures e.g. primitive data, object and arrays.**
+
+- **Linear Type (sequential order)**, the data element is 1:1 correspondence (the elements are arranged in sequence one after the other), single layer
+  - **Array**: arranged in continuous memory <div align = center><img src=https://cdn.programiz.com/cdn/farfuture/CvSYKIrQaK-KlCU2PC0qZULI9kZa33XK3-HH1uipQIE/mtime:1623152231/sites/tutorial2program/files/array_.png width="60%"></div>
+  - **Linked List**: elements are connected through a series of nodes.<div align = center><img src=https://cdn.programiz.com/cdn/farfuture/m9VXEfUlR739aTq0OmxoCW3z5sgKYuMLajEmP-q3J88/mtime:1623152210/sites/tutorial2program/files/linked-list_dsa.png width="100%"></div>
+  - **Stack**: elements are stored in the LIFO principle. <div align = center><img src=https://cdn.programiz.com/cdn/farfuture/kDcDcLDytJ7-aLU-7zVQAIiMLfh4TOvi-mZR10hOCFg/mtime:1623152242/sites/tutorial2program/files/stack_dsa.png width="50%"></div>
+  - **Queue**: works in the FIFO principle <div align = center><img src=https://cdn.programiz.com/cdn/farfuture/Li6chlo-utkw-FHPvLC_IiManoc41y1yEpUzwkj8iY8/mtime:1623152237/sites/tutorial2program/files/queue_dsa.png width="60%"></div>
+- **Non-linear Type (hierarchical manner)** arranged in a hierarchical manner where one element will be connected to one or more elements, different layer 
+  - **Graph** each node is called vertex and each vertex is connected to other vertices through edges <div align = center><img src=https://cdn.programiz.com/cdn/farfuture/9QtvaweNfvWiBsAgt81aNynEhJXovky4lCoFgyU_Y-0/mtime:1623152219/sites/tutorial2program/files/graph_dsa.png width="40%"></div>
+  - **Tree**  a collection of vertices and edges. However, in tree data structure, there can only be one edge between two vertices. <div align = center><img src=https://cdn.programiz.com/cdn/farfuture/oJBsOWQ4sBd6DYjtaDq4MtU2fIxMWfuD-eMU0ePauIE/mtime:1623152223/sites/tutorial2program/files/tree_dsa.png width="50%"></div>
+
 
 Mathematical sets are static while sets in Computer Science are dynamic. Elements in a set is represented by an object (say $x$) and an object contains a key field (say $k$) and some satellite data. General operations on a dynamic set $S$ include
 
@@ -229,12 +243,9 @@ Mathematical sets are static while sets in Computer Science are dynamic. Element
 
 
 
-## Stack
 
+### Stack
 
-
-
-**Stack**:
  - LIFO: Last In First Out
  - $S.top$
  - basic operations $O(1)$
@@ -264,19 +275,32 @@ else S.top = S.top - 1
     return S[S.top + 1]
 ```
 
-**Queues**:
+### Queue data structure
+<div align = center><img src=https://cdn.programiz.com/cdn/farfuture/Li6chlo-utkw-FHPvLC_IiManoc41y1yEpUzwkj8iY8/mtime:1623152237/sites/tutorial2program/files/queue_dsa.png width="60%"></div>
+Main Properties:
+
 - FIFO: 
       First In First Out
-- tail & Q.head
+- Q.tail & Q.head
   
   Q.head is the first element of queue.
 
   Q.tail is the next insersion position of the last element. 
 - 2 basic operations $O(1)$
-  - ENQUEUE $(Q, x)$
-  - DEQUEUE $(Q)$
+  - Enqueue $(Q, x)$ addQueue 
+    - Step 1: rear + 1, when front == rear, the queue is empty
+    - Step 2: if rear < maxSize - 1, add the element, otherwise, it cannot add any element. rear == maxSize - 1, the queue is full.
+  - Dequeue $(Q)$ - removeQueue
+
+
+
+
+
 
 ## Hash tables
 
 ## Direct-address tables
 
+## Trees
+Binary Search Trees (BST) provide a more effective way to print its values in sorted order with running time $Θ(n)$.
+<div align = center><img src='https://miro.medium.com/max/1400/1*ziYvZzrttFYMXkkV9u66jw.png'></div>

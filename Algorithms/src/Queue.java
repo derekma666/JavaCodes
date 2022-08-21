@@ -8,11 +8,13 @@ import java.util.Scanner;
 public class Queue {
 
     public static void main(String[] args) {
+
         ArrayQueue queue = new ArrayQueue(3);
-        char key = ' ';
+        char key = ' '; //accept user's input [s e a g h]
         Scanner scanner = new Scanner(System.in);
         boolean loop = true;
 
+        // output the message
         while(loop) {
             System.out.println("s(show): display");
             System.out.println("e(exit): exit");
@@ -20,7 +22,7 @@ public class Queue {
             System.out.println("g(get): get data from the queue");
             System.out.println("h(head): head data");
 
-            key = scanner.next().charAt(0);
+            key = scanner.next().charAt(0); // accept a char
             switch (key){
                 case 's':
                     queue.showQueue();
@@ -67,17 +69,17 @@ public class Queue {
 
 // ArrayQueue
 class ArrayQueue {
-    private int maxSize;
-    private int front; // head
-    private int rear; // rear
-    private int[] arr; // save data
+    private int maxSize; // max size of queue
+    private int front; // head of queue
+    private int rear; // rear of queue
+    private int[] arr; // save data in a array
 
     //constructor
     public ArrayQueue(int arrMaxSize) {
         maxSize = arrMaxSize;
         arr = new int[maxSize];
-        front = -1; // point to the next front position of head
-        rear = -1; // point to the rear (include the rear data)
+        front = -1; // point to the previous position of front
+        rear = -1; // point to the rear (include the rear)
     }
 
     // check the queue is full
@@ -97,7 +99,7 @@ class ArrayQueue {
             System.out.println("-- Sorry, the queue is full.");
             return;// cannot add then return the function
         }
-        rear++;
+        rear++; // rear + 1
         arr[rear] = n;
     }
 
@@ -105,7 +107,7 @@ class ArrayQueue {
     public int getQueue(){
         //check empty
         if(isEmpty()){
-            throw new RuntimeException("Empty, cannot display the data.");
+            throw new RuntimeException("-- Empty, cannot display the data.");
         }
         front++;
         return arr[front];
@@ -115,7 +117,7 @@ class ArrayQueue {
     public void showQueue() {
         //transverse
         if (isEmpty()){
-            System.out.println("Empty, no data");
+            System.out.println("Empty queue, no data");
             return;
         }
         for (int i = 0; i < arr.length; i++){
