@@ -1,44 +1,124 @@
+import java.util.Scanner;
+
 public class HashTable {
 
     public static void main(String[] args) {
+
+        // Create a HashTable
+        HashTab hashTab = new HashTab(7);
+
+        // Menu
+        String key = "";
+        Scanner scanner = new Scanner(System.in);
+        while (true) {
+            System.out.println("add: add employee");
+            System.out.println("list: show employee");
+            System.out.println("exit: exit system");
+
+            key = scanner.next();
+            switch (key){
+                case "add":
+                    System.out.println("Please type the ID");
+                    int id = scanner.nextInt();
+                    System.out.println("Please type the name");
+                    String name = scanner.next();
+
+                    Emp emp = new Emp(id, name);
+                    hashTab.add(emp);
+                    break;
+                case "list":
+                    hashTab.list();
+                    break;
+                case "exit":
+                    scanner.close();
+                    System.exit(0);
+                    break;
+
+                default:
+                    break;
+            }
+
+        }
 
 
     }
 }
 
-class Employee{
-    int id;
-    String name;
-    Employee next;
+// Create a HashTab for managing the multi-LinkedList
+class HashTab {
+    private EmpLinkedList[] empLinkedListArray;
+    private int size; // How many LinkedList
 
-    public Employee(int id, String name) {
+    //Constructor
+    public HashTab(int size){
+        this.size = size;
+        //initialisation of empLinkedListArray
+        empLinkedListArray = new EmpLinkedList[size];
+        //??
+        for (int i = 0; i < size; i++){
+            empLinkedListArray[i] = new EmpLinkedList();
+        }
+
+    }
+
+    // Add the Employees
+    public void add(Emp emp){
+        // 1. Based on Employee's ID, add to the LinkedList
+        int empLinkedListNo = hashFun(emp.id);
+        // 2. Put the emp to corresponding linkedList
+        empLinkedListArray[empLinkedListNo].add(emp);
+    }
+
+    // Show all the LinkedList of HashTab
+    public void list(){
+        for (int i = 0; i < size; i++){
+            empLinkedListArray[i].list(i);
+        }
+    }
+
+    // Hash function
+    public int hashFun(int id){
+        return id % size;
+    }
+}
+
+
+// Employee {id, name}
+class Emp{
+    public int id;
+    public String name;
+    public Emp next; // next default is null
+    public Emp(int id, String name) {
+        super();
         this.id = id;
         this.name = name;
     }
 }
 
-class EmployeeLinkedList{
-    Employee head;
+class  EmpLinkedList{
+    private Emp head; // head pointer, head is point to the first Emp
 
-    public void add(Employee employee){
-        // 1. check if the head is null
-        if(head == null){
-            head = employee;
+    // add Employees
+    // Notes: 1. assume when adding Employees, the id is increasing,
+    // the associated id is from small to large, therefore, the Emp is
+    // directly added to the last.
+    public void add(Emp emp) {
+        // 1. check if the head is null or not
+        if (head == null) {
+            head = emp;
             return;
         }
-        // 2. search the last node and insert it
-        Employee currentEmployee = head;
-        while(true){
-            // infinite loop for check the condition
+        // 2. if not, search the last node and insert
+        Emp curEmp = head;
+        while (true) {
+            // * infinite loop for check the condition
             // note the condition must be achieved to break the loop
-            if(currentEmployee.next == null){
+            if (curEmp.next == null) {
                 break;
             }
-            else{
-                currentEmployee = currentEmployee.next;
-            }
+            curEmp = curEmp.next; // => next
         }
-        currentEmployee.next = employee;
+        curEmp.next = emp;
     }
 
     // show all the nodes of linkedlist based on id
@@ -49,37 +129,36 @@ class EmployeeLinkedList{
             return;
         }
         //2.
-        System.out.println("information of the " + (no + 1) + "th list:");
-        Employee currentEmployee = head;
+        System.out.println((no + 1) + "th list"+"information is: ");
+        Emp curEmp = head;
         while(true){
             System.out.printf("=> id=%d name=%s\t",
-                    currentEmployee.id, currentEmployee.name);
-            if(currentEmployee.next == null){
+                    curEmp.id, curEmp.name);
+            if(curEmp.next == null){
                 break;
             }
-            currentEmployee = currentEmployee.next;
+            curEmp = curEmp.next;
         }
-        System.out.println(" ");
+        System.out.println("");
     }
 
-    //3. search
-    public Employee search(int id){
-        if(head == null){
-            System.out.println("Empty");
+    //3. search based on ID
+    // if found, then return Employee
+    // if not, return null
+    public Emp fingEmpById() {
+        // LinkedList
+        if (head == null){
+            System.out.println("the LinkedList is null.");
             return null;
         }
-        Employee temp = head;
-        while(true){
-            if (temp.id == id){
-                break;
+        Emp curEmp = head;
+        while (true){
+            if (curEmp.id == id){
+
             }
-            if (temp.next == null){
-                temp = null;
-                break;
-            }
-            temp = temp.next;
         }
-        return temp;
+
     }
+
 }
 

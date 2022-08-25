@@ -297,7 +297,9 @@ Main Properties:
 
 
 
-## Hash tables
+### Hash tables
+
+
 
 ## Direct-address tables
 
