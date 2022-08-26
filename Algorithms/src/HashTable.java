@@ -1,5 +1,10 @@
 import java.util.Scanner;
+/*
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!          HashTable          !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+ */
 public class HashTable {
 
     public static void main(String[] args) {
@@ -13,6 +18,7 @@ public class HashTable {
         while (true) {
             System.out.println("add: add employee");
             System.out.println("list: show employee");
+            System.out.println("find: find employee");
             System.out.println("exit: exit system");
 
             key = scanner.next();
@@ -28,6 +34,11 @@ public class HashTable {
                     break;
                 case "list":
                     hashTab.list();
+                    break;
+                case "find":
+                    System.out.println("Please type the id: ");
+                    id = scanner.nextInt();
+                    hashTab.findEmpById(id);
                     break;
                 case "exit":
                     scanner.close();
@@ -74,6 +85,20 @@ class HashTab {
         for (int i = 0; i < size; i++){
             empLinkedListArray[i].list(i);
         }
+    }
+
+    //based on ID, find the Employee
+    public void findEmpById(int id){
+        //1. use hash function to find which LinkedList
+        int empLinkedListNo = hashFun(id);
+        Emp emp = empLinkedListArray[empLinkedListNo].findEmpById(id);
+        if(emp != null){
+            //find it
+            System.out.printf("We found the employee id = %d in the %d LinkedList", id, (empLinkedListNo+1));
+        }else{
+            System.out.println("In the HashTable, we did not find the Employee.");
+        }
+
     }
 
     // Hash function
@@ -129,7 +154,7 @@ class  EmpLinkedList{
             return;
         }
         //2.
-        System.out.println((no + 1) + "th list"+"information is: ");
+        System.out.println((no + 1) + "th list " + "information is:");
         Emp curEmp = head;
         while(true){
             System.out.printf("=> id=%d name=%s\t",
@@ -145,19 +170,27 @@ class  EmpLinkedList{
     //3. search based on ID
     // if found, then return Employee
     // if not, return null
-    public Emp fingEmpById() {
-        // LinkedList
+    public Emp findEmpById(int id) {
+        // Check the LinkedList null or not
         if (head == null){
             System.out.println("the LinkedList is null.");
             return null;
         }
+        // assisted point
         Emp curEmp = head;
         while (true){
-            if (curEmp.id == id){
-
+            if (curEmp.id == id){// find it
+                break; // we found the Emp
             }
+            // exit
+            if (curEmp.next == null) {// indicate current LinkedList did not find the Emp
+                curEmp = null;
+                break;
+            }
+            curEmp = curEmp.next;//
         }
 
+        return curEmp;
     }
 
 }
