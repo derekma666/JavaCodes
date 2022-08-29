@@ -1,3 +1,4 @@
+package Amigoscode;
 
 public class Method_s {
 

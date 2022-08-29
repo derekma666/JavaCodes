@@ -1,3 +1,5 @@
+package Amigoscode;
+
 public class ClassObjects {
 
     //Classes and objects

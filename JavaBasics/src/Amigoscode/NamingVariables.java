@@ -1,3 +1,5 @@
+package Amigoscode;
+
 public class NamingVariables {
     public static void main(String[] args) {
         int zero = 0;

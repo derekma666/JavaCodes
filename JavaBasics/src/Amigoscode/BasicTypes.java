@@ -1,3 +1,5 @@
+package Amigoscode;
+
 public class BasicTypes {
 
     // 1. Introduction of basic data types
