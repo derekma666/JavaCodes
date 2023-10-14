@@ -1,16 +1,19 @@
 package Han;
 /*
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-完整的方法定义：
+完整的方法method定义：
+
 public 返回数据类型 方法名（形式参数列表）{
 //方法体语句
 return返回值
 }
-1. 形式参数列表 表示成员方法输入 （int n）, (int num1, int num2)
+
+1. 形式参数列表：表示成员方法输入 （int n）, (int num1, int num2)
 2. 返回数据类型（返回类型）：表示成员方法输出，void表示没有返回值
-3. 方法主体：表示为了是想某功能的代码块
+3. 方法主体：表示某功能的代码块
 4. return语句不是必须的
 
+分析：
 1. 访问修饰符（控制方法使用的范围）
 如果不写就是默认访问 (public protected 默认 private)
 
@@ -34,7 +37,7 @@ public class method01 {
     public static void main(String[] args) {
         //方法使用
         //1 方法写好后， 如果不去调用，不会输出
-        //2 先创建对象，然后调用方法即可
+        //2 先创建对象，再调用方法
         Person p1 = new Person();
 
         p1.speak();
